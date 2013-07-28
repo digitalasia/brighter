@@ -1,0 +1,10 @@
+/* HTML5 ✰ Boilerplate
+ * ==|== normalize ==========================================================
+ */
+
+textarea { background-color:black; color:white; font-size:20px; resize:none; line-spacing:200%; height:40px; display: block; 
+width: 800px;		height:800px;		margin: 0 auto;		margin-top:100px;overflow: hidden;
+		cursor:default;
+		outline:none; //remove blue border 
+		font-family: verdana, arial, helvetica, sans-serif;border:none;}
+body{ background: black; color: #EBEBEB;}

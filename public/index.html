@@ -1,0 +1,218 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Brighter - Distraction Free Writing</title>
+  <meta name="description" content="Writer is a distraction free writing tool. It is free to use!">
+  <meta name="author" content="ytbryan, free writer, writing, focus, writing tool, writeroom, focuswriter, ommwriter, writemonkey, q10, brighter">
+
+  <!-- ios web configuration -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" sizes="114x114" href="img/touch-icon-iphone4.png" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="js/libs/jquery.counter-2.1.js"></script>
+  <script src="js/libs/behave.js"></script>
+
+  <style>
+  	.gray 
+  	{
+  		color:#d1d1d1;
+  		margin-left:10px;
+  	}
+
+  	.underline:hover 
+  	{
+  		text-decoration: underline;
+  	}
+  </style>
+<body>
+
+  <div id="container">
+    <header>
+
+    </header>
+    <div id="main" role="main">
+		<textarea cols="40" id="document_content" name="document[content]" rows="20" spellcheck="false"></textarea>
+    </div>
+    <footer>
+
+    </footer>
+  </div> <!--! end of #container -->
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <!-- end scripts-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28011757-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+
+	//Make TextArea Autoresize
+	onload = function() 
+	{
+		var editor = new Behave({
+			
+				textarea: 		document.getElementById('document_content'),
+				replaceTab: 	true,
+			    softTabs: 		true,
+			    tabSize: 		4,
+			    autoOpen: 		true,
+			    overwrite: 		true,
+			    autoStrip: 		true,
+			    autoIndent: 	true
+			});
+
+
+		var t = document.getElementsByTagName('textarea')[0];
+		var offset= !window.opera ? (t.offsetHeight - t.clientHeight) : (t.offsetHeight + parseInt(window.getComputedStyle(t, null).getPropertyValue('border-top-width'))) ;
+
+		var resize 	= function(t) {
+			t.style.height = 'auto';
+			t.style.height = (t.scrollHeight  + offset ) + 'px';
+		}
+
+		t.addEventListener && t.addEventListener('input', function(event) {
+			resize(t);
+		});
+
+		t['attachEvent']  && t.attachEvent('onkeyup', function() {
+			resize(t);
+		});
+		
+        //add word counter before textarea
+		$("#document_content").counter(
+			{
+				type: 'word',
+				goal: 'sky',
+				text: true,
+			    count: 'up',
+				msg:'words'
+			});
+		//begin blinking cursor by focusing textarea	
+		$("#document_content").focus();
+		
+		//Word Count fade out when user start to type
+		$("#document_content").keyup(function() {			
+			$("#document_content_counter").stop().animate({opacity:'0'});
+			var textarea_content_array = $("#document_content").val().split("\n");
+			document.title = textarea_content_array[0];
+		});
+
+		$("#document_content_counter").hover(
+		function () {
+			$("#document_content_counter").stop().animate({opacity:'100'});
+		  }
+		);
+		
+		
+		 $("#document_content_counter").append("<a class=\"gray underline\" onclick=\"window.print()\">Print</a>");	
+		 $("#document_content_counter").append("<a class=\"gray underline\" onclick=\"sendEmail('','');\">Email</a>");	
+		 //$("#document_content_counter").append("<a class=\"gray underline\" onclick=\"sendEmail('','');\">Copy</a>");	
+
+	 	 //$("#document_content_counter").append("<a class=\"gray underline\" data-toggle=\"modal\" data-target=\"#myModal\">About</a>");	
+
+		// $("#document_content_counter").append("<img onClick=\"window.print(); return false;\" src=\"img/printer.png\">");	
+		
+		// $("#document_content_counter").append("<img onClick=\"sendEmail();\" src=\"img/mail.png\">");	
+		
+	}
+
+
+
+	function fill_in_initial_text()
+	{
+		// 		Welcome!
+
+		// Brighter is a free focus writing tool that exists online.  
+
+		// It does not track your data. 
+		// There is no login. 
+		// There is no saving (Please take note).
+		// If you are on mac, cmd+f for full screen. I think it's ctrl + f for windows.
+		// It works on all modern internet browsers like Firefox, Chrome , Safari and IE9. 
+		// We use it everyday at our own company. 
+
+	}
+	
+	function sendEmail(subject, content)
+	{
+		content = document.getElementById('document_content').value
+
+		if(content.length == 0)
+		{
+			var r = confirm("Send an empty email? ")
+
+			if(r == true)
+			{
+				if(subject == undefined)
+				{
+					subject = "Sent From Brighter"
+				}
+				else {
+					subject = "Sent From Brighter " + subject;
+				}
+
+				if(content == undefined)
+				{
+					content = ""
+				}
+				content = content.replace(/\n/g, '%0D');
+				constructed_string = "mailto:?subject=" + subject + "&body=" + content
+				window.open(constructed_string,"_blank")
+			}
+		}
+		else 
+		{
+			var r = confirm("Open in email?")
+			if(r == true)
+			{
+				if(subject == undefined)
+				{
+					subject = "Sent From Brighter"
+				}
+				else {
+					subject = "Sent From Brighter " + subject;
+				}
+
+				if(content == undefined)
+				{
+					content = ""
+				}
+				content = content.replace(/\n/g, '%0D');
+				constructed_string = "mailto:?subject=" + subject + "&body=" + content
+				window.open(constructed_string,"_blank")
+			}
+		}
+	}	
+	</script>
+</head>
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>

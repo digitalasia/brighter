@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: brighter
+  pool: 5
+  username: postgres
+  password: workhard
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: brighter
+  pool: 5
+  username: postgres
+  password: workhard
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: brighter
+  pool: 5
+  username: postgres
+  password: workhard
