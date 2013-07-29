@@ -9,7 +9,9 @@ Brighter is an ultra simple, web-based, distraction free writer. Focus on writin
 
 2. It works on all desktop browsers. Tested on Firefox, Safari and Chrome on a mac. 
 
-3. Cmd+f for full screen mode. Ctrl+f in window. 
+3. On a mac, Cmd+f for full screen mode. On PC, Ctrl+f for full screen. 
+
+4. Uses behave.js for IDE style behaviors.
 
 
 
