@@ -1,6 +1,8 @@
 150722 == First Log ==
 
 Shiung here on first commit and setup.
+Updated with log file and create "wip" branch for development.
+Forgotted and made the first commit to master.
 
 TODO: Add in a component that changes app color theme (background and font).
 TODO: Add in recognition of simple terms such as "TODO".
