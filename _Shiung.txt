@@ -1,0 +1,8 @@
+150722 == First Log ==
+
+Shiung here on first commit and setup.
+
+TODO: Add in a component that changes app color theme (background and font).
+TODO: Add in recognition of simple terms such as "TODO".
+TODO: Add in programming syntax recognition and formatting.
+
