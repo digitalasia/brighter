@@ -432,3 +432,4 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from service at /Users/Shiung/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138)
