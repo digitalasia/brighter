@@ -1,0 +1,39 @@
+150722 == First Log ==
+
+Recreated a new clone from the original repository.
+Shiung here on first commit and setup.
+Updated with log file and create "wip" branch for development.
+Forgotted and made the first commit to master.
+
+TODO: Add in a component that changes app color theme (background and font).
+TODO: Add in recognition of simple terms such as "TODO", "BUG", "ERROR", "DONE", "HELP", "HACK".
+TODO: Add in programming syntax recognition and formatting.
+
+150818 == Second Log ==
+Created WIP branch to separate changes.
+
+Updated gems in Gemfile to the latest available versions.
+Removed original 'Gemfile.lock'.
+
+Validated that app works locally.
+Noticed a WARNING about missing secret keys when running "rails s"
+
+ERROR: config.eagar_load is set to nil. Please update your config/environments/*.rb files accordingly:
+  * development - set to false
+  * test - set to false
+  * production - set it to true
+
+Updated CSS formatting in assets/stylesheets/style.css
+
+Noticed that some files were using "Briter" instead of "Brighter"
+  * app/assets/views/layout/application.html.erb
+  * config/initializers/secret_token.rb
+  * config/initializers/session_store.rb
+  * config/locales/application.rb
+  * config/locales/environment.rb
+  * config/locales/routes.rb
+
+Updated README.rdoc
+Another README is located in doc/README_FOR_APP
+
+Updated log.
