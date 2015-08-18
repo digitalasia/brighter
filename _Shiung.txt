@@ -25,4 +25,15 @@ ERROR: config.eagar_load is set to nil. Please update your config/environments/*
 
 Updated CSS formatting in assets/stylesheets/style.css
 
+Noticed that some files were using "Briter" instead of "Brighter"
+  * app/assets/views/layout/application.html.erb
+  * config/initializers/secret_token.rb
+  * config/initializers/session_store.rb
+  * config/locales/application.rb
+  * config/locales/environment.rb
+  * config/locales/routes.rb
+
+Updated README.rdoc
+Another README is located in doc/README_FOR_APP
+
 Updated log.
