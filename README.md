@@ -1,9 +1,9 @@
-== Brighter
+# Brighter
 
 Brighter is an ultra simple, web-based, distraction free writer. Focus on writing, that's all it matters.
 
 
-== Info
+# Info
 
 1. There is no backend. Hence, there is no tracking. nothing is saved.
 
